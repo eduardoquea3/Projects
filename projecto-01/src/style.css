@@ -1,0 +1,274 @@
+@font-face{
+  font-family: 'Roboto';
+  src: url("../assets/fonts/Roboto-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #36384e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section {
+  background: white;
+  height: 600px;
+  width: 860px;
+  border-radius: 30px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.izquierda {
+  height: 100%;
+  width: 54%;
+  padding: 0 40px 0 30px;
+  display: grid;
+  place-content: center;
+  gap: 26px;
+}
+
+.contenido{
+  display: grid;
+  place-content: center;
+  gap: 26px;
+}
+
+.titulo{
+  font-size: 3rem;
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+.contenido-p{
+  font-size: 1.0rem;
+  font-family: "Roboto";
+}
+
+ul,li {
+  list-style: none;
+}
+
+ul{
+  display: grid;
+  gap: 14px;
+}
+
+li {
+  display: flex;
+}
+
+li>img {
+  margin-right: 15px;
+}
+
+li>p{
+  font-size: 1.0rem;
+  font-family: "Roboto";
+}
+
+.contacto{
+  display: grid;
+  gap: 10px;
+}
+
+.text-input{
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-input p{
+  font-weight: 700;
+  font-family: "Roboto";
+  font-size: 13px;
+  color: #ff6741;
+}
+
+.text-input label{
+  font-weight: 700;
+  font-family: "Roboto";
+  font-size: 13px;
+}
+
+.contacto input {
+  height: 50px;
+  border-radius: 12px;
+}
+
+.Correo{
+  padding: 0 26px;
+  border: 1px #9294a0 solid;
+  font-size: 14px;
+  font-family: "Roboto";
+  margin-bottom: 14px;
+}
+
+.Correo:focus,#Correo:hover{
+  outline: none;
+}
+
+.error{
+  background: #ffd6cc;
+  color: #ff896c;
+  font-weight: bold;
+  border: 2px #ff896c solid;
+}
+
+input[type="submit"]{
+  border: 0 solid #000;
+  background: #242742;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 15px;
+}
+
+input[type="submit"]:hover{
+  background: linear-gradient(to right,#ff5476,#ff6741);
+  outline: none;
+  box-shadow: 0 8px 25px #ff5476;
+}
+
+.derecha{
+  height: 100%;
+  width: 46%;
+}
+
+.derecha img{
+  width: 100%;
+  max-height: 100%;
+}
+
+.boletin{
+  width: 500px;
+  height: 500px;
+  display: flex;
+  display: grid;
+  place-content: center;
+  gap: 25px;
+  padding: 0 60px;
+}
+
+.titulo-boletin{
+  font-size: 3.4rem;
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+.contenido-boletin{
+  font-size: 1.0rem;
+  font-family: "Roboto";
+}
+
+.contenido-boletin span{
+  font-weight: bolder;
+}
+
+.boton-boletin{
+  height: 50px;
+  border-radius: 12px;
+  background: #242742;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 600;
+  font-size: 15px;
+}
+
+button:hover{
+  background: linear-gradient(to right,#ff5476,#ff6741);
+  border: 0;
+  box-shadow: 0 8px 25px #ff5476;
+}
+
+.bg-img-mobile{
+  display: none;
+}
+
+.attribution{
+  position: absolute;
+  bottom: 0px;
+  margin: 0 auto;
+}
+
+@media (min-width:300px) and (max-width:450px){
+  section{
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .derecha{
+    width: 100%;
+    height: auto;
+  }
+  .bg-img{
+    display: none;
+  }
+  .bg-img-mobile{
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .izquierda{
+    width: 100%;
+  }
+}
+
+@media (min-width:450px) and (max-width:770px){
+  section{
+    width: 400px;
+    height: 700px;
+    flex-direction: column-reverse;
+    padding: 0;
+    justify-content: start;
+  }
+  .derecha{
+    width: 100%;
+    height: auto;
+  }
+  .bg-img{
+    display: none;
+  }
+  .bg-img-mobile{
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 30px;
+  }
+  .izquierda{
+    height: auto;
+    width: 100%;
+    gap: 5px;
+  }
+  .contenido{
+    gap: 6px;
+  }
+  .titulo{
+    font-size: 2.2rem;
+    margin-top: 30px;
+  }
+  .contenido p{
+    font-size: 0.9rem;
+  }
+  footer > input[type="email"]{
+    margin-bottom: 0;
+  }
+  footer > input[type="submit"]:hover{
+    background: #242742;
+    box-shadow: 0 0 0 red;
+  }
+  .boton-boletin:hover{
+    background: #242742;
+    box-shadow: 0 0 0 red;
+  }
+}
