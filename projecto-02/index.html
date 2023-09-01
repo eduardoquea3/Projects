@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Results summary component</title>
+  <link rel="stylesheet" href="src/output.css">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body class="h-[100vh] w-[100vw] bg-Dark-gray-blue flex justify-center items-center">
+  <div
+    class="h-[100%] w-[100%] min-[1020px]:flex-row flex flex-col min-[1020px]:w-[700px] min-[1020px]:h-[500px] bg-white min-[1020px]:rounded-[24px]">
+    <section
+      class="bg-gradient-to-b from-Light-slate-blue to-Light-royal-blue text-white h-[44%] gap-[16px] flex justify-center items-center flex-col rounded-b-[24px] min-[1020px]:w-[50%] min-[1020px]:h-[100%] min-[1020px]:rounded-[24px]">
+      <h2 class="font-Hanken font-bold text-[18px] text-Light-lavender">Your Result</h1>
+        <main
+          class="bg-gradient-to-b from-Violet-blue to-Persian-blue rounded-[50%] h-[140px] w-[140px] flex justify-center items-center flex-col">
+          <span class="text-[50px] font-Hanken font-extrabold">76</span>
+          <span class="font-Hanken font-medium text-Light-lavender">of 100</span>
+        </main>
+        <footer class="w-[100%] px-[10%]">
+          <h2 class="text-center align-middle font-Hanken font-medium text-[24px]">Great</h2>
+          <p class="text-center align-middle font-Hanken text-Light-lavender text-[18px]">You scored higher than 65% of
+            the people who have taken these
+            tests</p>
+        </footer>
+    </section>
+    <section
+      class="w-[100%] h-[56%] px-[9%] flex justify-center flex-col gap-[20px] min-[1020px]:h-[100%] min-[1020px]:w-[50%]">
+      <h2 class=" font-bold text-[20px] min-[1000px]:text-blue-500">Summary</h2>
+      <ol class="flex flex-col gap-[20px] justify-center">
+        <li class="flex justify-between bg-Light-red-op h-[60px] items-center rounded-xl px-[10px]">
+          <div class="flex justify-center items-center gap-[10px]">
+            <img src="assets/images/icon-reaction.svg" alt="reaction">
+            <p class="text-Light-red font-medium">
+              Reaction
+            </p>
+          </div>
+          <p class="font-medium text-gray-400">
+            <span class="text-black">80</span>
+            /100
+          </p>
+        </li class="w-[100%] px-[10%]">
+        <li class="flex justify-between bg-Orangey-yellow-op h-[60px] items-center rounded-xl px-[10px]">
+          <div class="flex justify-center items-center gap-[10px]">
+            <img src="assets/images/icon-memory.svg" alt="memory">
+            <p class="text-Orangey-yellow font-medium">
+              Memory
+            </p>
+          </div>
+          <p class="font-medium text-gray-400">
+            <span class="text-black">92</span>
+            /100
+          </p>
+        </li er class="w-[100%] px-[10%]">
+        <li class="flex justify-between bg-Green-teal-op h-[60px] items-center rounded-xl px-[10px]">
+          <div class="flex justify-center items-center gap-[10px]">
+            <img src="assets/images/icon-verbal.svg" alt="verbal">
+            <p class="text-Green-teal font-medium">
+              Verbal
+            </p>
+          </div>
+          <p class="font-medium text-gray-400">
+            <span class="text-black">61</span>
+            /100
+          </p>
+        </li er class="w-[100%] px-[10%]">
+        <li class="flex justify-between bg-Cobalt-blue-op h-[60px] items-center rounded-xl px-[10px]">
+          <div class="flex justify-center items-center gap-[10px]">
+            <img src="assets/images/icon-visual.svg" alt="visual">
+            <p class="text-Cobalt-blue font-medium">
+              Visual
+            </p>
+          </div>
+          <p class="font-medium text-gray-400">
+            <span class="text-black">72</span>
+            /100
+          </p>
+        </li>
+      </ol>
+      <button
+        class="bg-Dark-gray-blue text-white h-[60px] rounded-full text-[20px] font-bold font-Hanken">Continue</button>
+    </section>
+  </div>
+  <div class="attribution hidden">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+</html>
