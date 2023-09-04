@@ -19,11 +19,11 @@
   </style>
 </head>
 
-<body class="h-[100vh] w-[100vw] bg-Dark-gray-blue flex justify-center items-center">
+<body class="bg-Dark-gray-blue flex min-[1020px]:h-[100vh]">
   <div
-    class="h-[100%] w-[100%] min-[1020px]:flex-row flex flex-col min-[1020px]:w-[700px] min-[1020px]:h-[500px] bg-white min-[1020px]:rounded-[24px]">
+    class="h-[100%] w-[100%] min-[1020px]:flex-row flex flex-col m-auto min-[1020px]:w-[700px] min-[1020px]:h-[500px] bg-white min-[1020px]:rounded-[24px]">
     <section
-      class="bg-gradient-to-b from-Light-slate-blue to-Light-royal-blue text-white h-[44%] gap-[16px] flex justify-center items-center flex-col rounded-b-[24px] min-[1020px]:w-[50%] min-[1020px]:h-[100%] min-[1020px]:rounded-[24px]">
+      class="bg-gradient-to-b from-Light-slate-blue to-Light-royal-blue text-white h-[44%] gap-[16px] flex justify-center items-center flex-col rounded-b-[24px] py-[8%] min-[1020px]:w-[50%] min-[1020px]:h-[100%] min-[1020px]:rounded-[24px]">
       <h2 class="font-Hanken font-bold text-[18px] text-Light-lavender">Your Result</h1>
         <main
           class="bg-gradient-to-b from-Violet-blue to-Persian-blue rounded-[50%] h-[140px] w-[140px] flex justify-center items-center flex-col">
@@ -38,10 +38,11 @@
         </footer>
     </section>
     <section
-      class="w-[100%] h-[56%] px-[9%] flex justify-center flex-col gap-[20px] min-[1020px]:h-[100%] min-[1020px]:w-[50%]">
-      <h2 class=" font-bold text-[20px] min-[1000px]:text-blue-500">Summary</h2>
+      class="w-[100%] h-[56%] px-[8%] py-[4%] flex justify-center flex-col gap-[20px] min-[1020px]:h-[100%] min-[1020px]:w-[50%] min-[1020px]:px-[30px]">
+      <h2 class="font-bold text-[20px]">Summary</h2>
       <ol class="flex flex-col gap-[20px] justify-center">
-        <li class="flex justify-between bg-Light-red-op h-[60px] items-center rounded-xl px-[10px]">
+        <li
+          class="flex justify-between bg-Light-red-op h-[60px] items-center rounded-xl px-[10px] min-[1020px]:h-[50px]">
           <div class="flex justify-center items-center gap-[10px]">
             <img src="assets/images/icon-reaction.svg" alt="reaction">
             <p class="text-Light-red font-medium">
@@ -53,7 +54,8 @@
             /100
           </p>
         </li class="w-[100%] px-[10%]">
-        <li class="flex justify-between bg-Orangey-yellow-op h-[60px] items-center rounded-xl px-[10px]">
+        <li
+          class="flex justify-between bg-Orangey-yellow-op h-[60px] items-center rounded-xl px-[10px] min-[1020px]:h-[50px]">
           <div class="flex justify-center items-center gap-[10px]">
             <img src="assets/images/icon-memory.svg" alt="memory">
             <p class="text-Orangey-yellow font-medium">
@@ -65,7 +67,8 @@
             /100
           </p>
         </li er class="w-[100%] px-[10%]">
-        <li class="flex justify-between bg-Green-teal-op h-[60px] items-center rounded-xl px-[10px]">
+        <li
+          class="flex justify-between bg-Green-teal-op h-[60px] items-center rounded-xl px-[10px] min-[1020px]:h-[50px]">
           <div class="flex justify-center items-center gap-[10px]">
             <img src="assets/images/icon-verbal.svg" alt="verbal">
             <p class="text-Green-teal font-medium">
@@ -77,7 +80,8 @@
             /100
           </p>
         </li er class="w-[100%] px-[10%]">
-        <li class="flex justify-between bg-Cobalt-blue-op h-[60px] items-center rounded-xl px-[10px]">
+        <li
+          class="flex justify-between bg-Cobalt-blue-op h-[60px] items-center rounded-xl px-[10px] min-[1020px]:h-[50px]">
           <div class="flex justify-center items-center gap-[10px]">
             <img src="assets/images/icon-visual.svg" alt="visual">
             <p class="text-Cobalt-blue font-medium">
@@ -91,7 +95,7 @@
         </li>
       </ol>
       <button
-        class="bg-Dark-gray-blue text-white h-[60px] rounded-full text-[20px] font-bold font-Hanken">Continue</button>
+        class="bg-Dark-gray-blue text-white h-[60px] rounded-full text-[20px] font-bold font-Hanken min-[1020px]:hover:bg-gradient-to-b from-Light-slate-blue to-Light-royal-blue min-[1020px]:h-[50px]">Continue</button>
     </section>
   </div>
   <div class="attribution hidden">

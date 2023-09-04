@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Eduardo | Calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;700&display=swap" rel="stylesheet">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      display: none;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body theme="theme1">
+
+  <div class="root">
+    <header>
+      <span class="logo">calc</span>
+      <section>
+        <span class="theme-text">THEME</span>
+        <div>
+          <div class="estados">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </div>
+          <div class="opciones">
+            <div class="t1"></div>
+            <div class="t2"></div>
+            <div class="t3"></div>
+            <div id="toggle" class="circle"></div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <input type="text" class="display" disabled value="0">
+    <div class="botonera">
+      <span class="char">7</span>
+      <span class="char">8</span>
+      <span class="char">9</span>
+      <span class="spec del">DEL</span>
+      <span class="char">4</span>
+      <span class="char">5</span>
+      <span class="char">6</span>
+      <span class="char">+</span>
+      <span class="char">1</span>
+      <span class="char">2</span>
+      <span class="char">3</span>
+      <span class="char">-</span>
+      <span class="char">.</span>
+      <span class="char">0</span>
+      <span class="char">/</span>
+      <span class="char">x</span>
+      <span class="spec btn reset">RESET</span>
+      <span class="btn igual">=</span>
+    </div>
+  </div>
+
+  <div class="modal">
+    <p class="text-modal hidden">Llego al limite de caracteres introducidos en pantalla</p>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
