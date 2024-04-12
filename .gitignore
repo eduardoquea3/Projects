@@ -146,4 +146,4 @@ pnpm-lock.yaml
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
-./**/design/
+design/
