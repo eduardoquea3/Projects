@@ -1,122 +1,130 @@
 let day = document.getElementById("day"),
   month = document.getElementById("month"),
   year = document.getElementById("year");
+
 let inputDay = document.getElementById("num-day"),
   inputMonth = document.getElementById("num-month"),
   inputYear = document.getElementById("num-year");
+
 let btn = document.getElementById("boton");
 let mesageDay = document.querySelector(".mesage-day");
 let mesageMonth = document.querySelector(".mesage-month");
 let mesageYear = document.querySelector(".mesage-year");
 let mesage = document.querySelectorAll(".mesage");
-let enlaze = [
-  [day, month, year],
-  [mesageDay, mesageMonth, mesageYear],
-];
 
-const invalid = "Must be a valid day",
-  required = "This field is required";
+const required = "This field is required";
+const invalid = {
+  dia: "Must be a valid day",
+  mes: "Must be a valid month",
+  anio: "Must be in the past",
+};
 
-let regex = /^[0-9]{0,2}$/,
-  years = /^[0-3]{1,1}[0-9]{3,3}$/;
+const data = {
+  yearA: new Date().getFullYear(),
+  monthA: new Date().getMonth() + 1,
+  dayA: new Date().getDate(),
+};
+
+function verifyAll() {
+  let state = true;
+  if (day.value.trim() === "") {
+    mesageDay.innerText = required;
+    state = state && false;
+  }
+  if (month.value.trim() === "") {
+    mesageMonth.innerText = required;
+    state = state && false;
+  }
+  if (year.value.trim() === "") {
+    mesageYear.innerText = required;
+    state = state && false;
+  }
+  return state;
+}
+
+function verifyYear() {
+  if (year.value > data.yearA) {
+    mesageYear.innerText = invalid.anio;
+    return false;
+  }
+  return true;
+}
+
+function verifyMonth() {
+  let val_1 = month.value >= 1 && month.value <= 12 && year.value < data.yearA;
+  let val_2 =
+    month.value >= 1 && month.value <= data.monthA && year.value == data.yearA;
+  if (!(val_1 || val_2)) {
+    mesageMonth.innerText = invalid.mes;
+    return false;
+  }
+  return true;
+}
+
+function verifyDay() {
+  let anio = year.value.trim() == "" ? data.yearA : parseInt(year.value);
+  let mes = month.value.trim() == "" ? data.monthA : parseInt(month.value);
+  if (day.value < 1 || day.value > new Date(anio, mes, 0).getDate()) {
+    mesageDay.innerText = invalid.dia;
+    return false;
+  }
+  return true;
+}
+
+function calcular() {
+  let eYear, eMonth, eDay;
+  eYear = data.yearA - parseInt(year.value);
+
+  eMonth = data.monthA - parseInt(month.value);
+  if (eMonth < 0) {
+    eYear--;
+    eMonth += 12;
+  }
+
+  eDay = data.dayA - parseInt(day.value);
+  if (eDay < 0) {
+    if (eMonth == 0) {
+      eYear--;
+      eMonth = 11;
+    } else {
+      eMonth--;
+    }
+    eDay += new Date(data.yearA, data.monthA - 1, 0).getDate();
+  }
+
+  inputDay.innerText = eDay;
+  inputMonth.innerText = eMonth;
+  inputYear.innerText = eYear;
+}
+
+function limpiar() {
+  inputDay.innerText = "--";
+  inputMonth.innerText = "--";
+  inputYear.innerText = "--";
+}
+btn.addEventListener("click", () => {
+  mesageDay.innerText = "";
+  mesageMonth.innerText = "";
+  mesageYear.innerText = "";
+  let firstState = verifyAll();
+  if (firstState === true) {
+    if (verifyYear() && verifyMonth() && verifyDay()) {
+      calcular();
+    }
+  }
+});
 
 day.addEventListener("input", () => {
-  if (regex.test(day.value) && day.value.length <= 2) {
-    return day.value;
-  } else day.value = day.value.slice(0, 2);
+  mesageDay.innerText = "";
+  limpiar();
 });
 
 month.addEventListener("input", () => {
-  if (regex.test(month.value) && month.value.length <= 2) {
-    return month.value;
-  } else month.value = month.value.slice(0, 2);
+  mesageMonth.innerText = "";
+  limpiar();
 });
+
 year.addEventListener("input", () => {
-  if (years.test(year.value) && year.value.length <= 4) {
-    return year.value;
-  } else year.value = year.value.slice(0, 4);
+  mesageYear.innerText = "";
+  limpiar();
 });
-
-btn.addEventListener("click", () => {
-  let dia, mes, anio;
-  (dia = day.value), (mes = month.value), (anio = year.value);
-  let resultado =
-    vacio(dia, mesageDay) && vacio(mes, mesageMonth) && vacio(anio, mesageYear);
-  verificar(dia, mes, anio);
-});
-
-const vacio = (ele, men) => {
-  if (ele == "") {
-    men.innerText = required;
-    return false;
-  } else {
-    men.innerText = "";
-    return true;
-  }
-};
-
-const verificar = (d, m, y) => {
-  let verify = true;
-  let quanty;
-  let date = new Date();
-  m--;
-  m < 12 && m >= 0 ? verify : (mesageMonth.innerText = invalid);
-  y <= new Date().getFullYear() ? verify : (mesageYear.innerText = invalid);
-  m++;
-  if (verify) {
-    d <= obtenerDiasEnMes(m, y)
-      ? (quanty = obtenerDiasEnMes(m, y))
-      : (mesageDay.innerText = invalid);
-  }
-
-  let diasC = date.getDate() - d,
-    mesC = date.getMonth() - m + 1,
-    anioC = date.getFullYear() - y;
-  if (anioC == 0) {
-    if (mesC < 0) {
-      mesageDay.innerText = invalid;
-      if (diasC < 0) {
-        mesageMonth.innerText = invalid;
-      }
-    } else {
-      inputDay.innerText = diasC;
-      inputMonth.innerText = mesC;
-      inputYear.innerText = anioC;
-    }
-  } else {
-    if (mesC < 0) {
-      anioC--;
-      mesC += 12;
-      if (diasC < 0) {
-        diasC += 31;
-      }
-      inputDay.innerText = diasC;
-      inputMonth.innerText = mesC;
-      inputYear.innerText = anioC;
-    } else {
-      if (diasC < 0) {
-        mesC--;
-        diasC += 31;
-      } else {
-        inputDay.innerText = diasC;
-        inputMonth.innerText = mesC;
-        inputYear.innerText = anioC;
-      }
-      inputDay.innerText = diasC;
-      inputMonth.innerText = mesC;
-      inputYear.innerText = anioC;
-    }
-  }
-};
-
-function obtenerDiasEnMes(mes, año) {
-  const siguienteMes = new Date(año, mes, 1);
-
-  siguienteMes.setDate(0);
-
-  return siguienteMes.getDate();
-}
-
-//  2023  09  04
-//  2004  09  11
-//  18    11  23

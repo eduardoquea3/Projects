@@ -1,77 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <title>Frontend Mentor | Age calculator app</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
-</head>
-
-<body>
-  <div class="root">
-    <section class="content">
-      <div class="day text">
-        <label for="day">DAY</label>
-        <input type="text" id="day" placeholder="DD">
-        <span class="mesage-day mesage"></span>
+  <body>
+    <div class="root">
+      <section class="content">
+        <div class="day text">
+          <label for="day">DAY</label>
+          <input type="number" id="day" placeholder="DD" />
+          <span class="mesage-day mesage"></span>
+        </div>
+        <div class="month text">
+          <label for="month">MONTH</label>
+          <input type="number" id="month" placeholder="MM" />
+          <span class="mesage-month mesage"></span>
+        </div>
+        <div class="year text">
+          <label for="year">YEAR</label>
+          <input type="number" id="year" placeholder="YYYY" />
+          <span class="mesage-year mesage"></span>
+        </div>
+      </section>
+      <div class="btn">
+        <hr class="division" />
+        <button id="boton">
+          <img src="./assets/images/icon-arrow.svg" alt="arrow" />
+        </button>
       </div>
-      <div class="month text">
-        <label for="month">MONTH</label>
-        <input type="text" id="month" placeholder="MM">
-        <span class="mesage-month mesage"></span>
-      </div>
-      <div class="year text">
-        <label for="year">YEAR</label>
-        <input type="text" id="year" placeholder="YYYY">
-        <span class="mesage-year mesage"></span>
-      </div>
-    </section>
-    <div class="btn">
-      <hr class="division">
-      <button id="boton">
-        <img src="./assets/images/icon-arrow.svg" alt="arrow">
-      </button>
+      <section class="result">
+        <p class="result-years">
+          <span id="num-year">--</span>
+          <i> years </i>
+        </p>
+        <p class="result-months">
+          <span id="num-month">--</span>
+          <i> months </i>
+        </p>
+        <p class="result-days">
+          <span id="num-day">--</span>
+          <i> days </i>
+        </p>
+      </section>
     </div>
-    <section class="result">
-      <p class="result-years">
-        <span id="num-year">--</span>
-        <i>
-          years
-        </i>
-      </p>
-      <p class="result-months">
-        <span id="num-month">--</span>
-        <i>
-          months
-        </i>
-      </p>
-      <p class="result-days">
-        <span id="num-day">--</span>
-        <i>
-          days
-        </i>
-      </p>
-    </section>
-  </div>
-  <div class="attribution" style="display: none;">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-  <script src="main.js" type="module"></script>
-</body>
-
+    <!-- <div class="attribution" style="display: none;"> -->
+    <!-- Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. -->
+    <!-- Coded by <a href="#">Your Name Here</a>. -->
+    <!-- </div> -->
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
